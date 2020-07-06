@@ -260,6 +260,9 @@ hr {
         text-align: right;
         font-style: italic;
         padding-right:4vw;
+        @include media-query($phone) {
+          padding-right: 8vw;
+        }
         @include media-query($desktop-hi-res) {
           padding-right:4vw;
         }
