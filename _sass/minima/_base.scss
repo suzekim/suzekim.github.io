@@ -224,7 +224,11 @@ hr {
     }
     @include media-query($tablet-landscape) {
       display: flex;
-      width: 60vw;
+      width: 90%;
+      > * {
+        display: block;
+        width: 60%;
+      }
     }
 
     @include media-query($desktop-hi-res) {
