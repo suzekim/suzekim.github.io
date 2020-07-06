@@ -1,0 +1,609 @@
+html {
+  font-size: $base-font-size;
+}
+
+/**
+ * Reset some basic elements
+ */
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+
+/**
+ * Basic styling
+ */
+ body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+
+p {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+ h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre,
+ ul, ol, dl, figure,
+ %vertical-rhythm {
+  margin-bottom: 2px;
+}
+
+hr {
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+.img-circle {
+  border-radius: 50%;
+  border: 2px solid $light-grey;
+  width: 250px;
+  height: 250px;
+
+  @include media-query($desktop-hi-res) {
+    width:15vw;
+    height:15vw;
+  }
+}
+
+
+
+/**
+ * `main` element
+ */
+ main {
+  display: box; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  margin-top: 10vh;
+
+  @include media-query($desktop-hi-res) {
+    display: flex;
+    margin-left: 6vw;
+    margin-right: 4vw;
+    margin-top:0vh;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-query($desktop-hi-res) {
+      height: 100vh;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      margin-top:2vh;
+    }
+    .name {
+      margin-top: 20px;
+    }
+    > * {
+      text-align: center;
+    }
+  }
+
+  .content {
+    margin-top: 10vh;
+    margin-bottom:108px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    @include media-query($tablet-landscape) {
+      margin-top: 6vh;
+    }
+
+    @include media-query($desktop-hi-res) {
+      margin-left: 23vw;
+      margin-top:10vh;
+      width: 64vw;
+      overflow-x:fixed;
+      margin-right:4vw;
+      // margin
+    }
+
+    > *:not(:first-child) {
+      margin-top: 4vh;
+      @include media-query($desktop-hi-res) {
+        margin-top: 1vh;
+      }
+    }
+
+    .middle {
+      > *:not(:first-child) {
+        margin-top: 20px;
+      }
+      @include media-query($monitor) {
+        > *:not(:first-child) {
+          margin-top: 0px;
+        }
+      }
+
+    }
+    .bottom {
+      margin-top: 5vh;
+      @include media-query($monitor) {
+        margin-top:0vh;
+      }
+    }
+
+
+    .col-1 {
+      width: 100%;
+    }
+
+    .col-2 {
+      display: box;
+      > * {
+        margin-top: 4vh;
+      }
+
+      @include media-query($desktop-hi-res) {
+        &.first {
+          display: flex;
+          > * {
+            display: block;
+            width: 50%;
+            &:not(:last-child) {
+              margin-right: 50px;
+            }
+          }
+        }
+        &.second {
+          margin-right: 8vw;
+        }
+      }
+
+      @include media-query($monitor) {
+        &.second {
+          display: flex;
+          margin-right:0vw;
+          > * {
+            display: block;
+            width: 50%;
+            &:not(:last-child) {
+              margin-right: 50px;
+            }
+          }
+        }
+      }
+    }
+
+    .description {
+      font-size: 16px;
+    }
+  }
+}
+
+.professional{
+  a {
+    color: $kr-blue;
+    font-weight: 550;
+    text-decoration: none;
+
+    &:hover {
+      color: $kr-blue-light;
+      text-decoration: underline;
+    }
+  }
+}
+
+.articles {
+  margin-top: 2vh;
+  @include media-query($monitor) {
+    margin-top: 1vh;
+  }
+  .row {
+    margin-bottom: 2vh;
+    // display: flex;
+    @include media-query($phone) {
+      display: block;
+      width: 100%;
+    }
+    @include media-query($tablet-landscape) {
+      display: flex;
+      width: 60vw;
+    }
+
+    @include media-query($desktop-hi-res) {
+      display: flex;
+      width: 100%;
+      > * {
+        display: block;
+        width: 60%;
+      }
+    }
+    
+    > *:not(:last-child) {
+      margin-bottom: 2vh;
+      @include media-query($monitor){
+        margin-bottom:0vh;
+        margin-right:1vw;
+      }
+    }
+
+    .article {
+      .title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 0px;
+      }
+      .author {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: right;
+        font-style: italic;
+        padding-right:4vw;
+        @include media-query($desktop-hi-res) {
+          padding-right:4vw;
+        }
+        @include media-query($monitor) {
+          padding-right:1vw;
+        }
+      }
+    }
+  }
+}
+
+.songs {
+  margin-top: 10px;
+  align-self: center;
+  @include media-query($desktop-hi-res) {
+    width: 90%;
+  }
+
+  .row {
+    align-self: center;
+    margin-bottom: 6px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .song {
+    width: 124px;
+    color: $spotify-black;
+    margin: 2px 8px;
+    text-align: center;
+    border: 1.5px solid $brand-color;
+    border-radius: 9999em 9999em 9999em 9999em;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 2px;
+    &:hover{
+      background-color: $spotify-green;
+      border: 1.5px solid $spotify-green;
+      color: $white;
+    }
+  }
+
+}
+
+
+
+
+/**
+ * Images
+ */
+ img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+ figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Headings
+ */
+ h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.7rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-family: Avenir Next;
+  font-size: 1.7rem;
+  color: $dark-font-color;
+}
+
+
+.line-separator {
+  text-align: center;
+  margin-bottom: 10px
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+
+  &.icon {
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 22px;
+    color: $fruit-red;
+  }
+}
+
+.outer-line {
+  width: 40%;
+  border-bottom: 2px solid $med-grey; 
+}
+
+u {
+  text-decoration:none;   
+  box-shadow: inset 0 -1.5px 0 white, inset 0 -2.7px 0 $fruit-red;
+}
+
+
+.underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0px;
+  margin-bottom: 0.8px;
+  background: linear-gradient(to right, $fruit-red-med, $fruit-red-med);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  &.first {
+    animation: underline 1.5s ease-in-out 1s;
+    animation-fill-mode: forwards;
+  } 
+  &.second {
+    animation: underline 1.5s ease-in-out 1.2s;
+    animation-fill-mode: forwards;
+  }
+  &.third {
+    animation: underline 1.5s ease-in-out 1.4s;
+    animation-fill-mode: forwards;
+  }
+  &.fourth {
+    animation: underline 1.5s ease-in-out 1.6s;
+    animation-fill-mode: forwards;
+  }
+  &.fifth {
+    animation: underline 1.5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes underline {
+  to {
+    background-size: 100% 2px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/**
+ * Links
+ */
+
+ .social-media-list {
+  display: flex;
+  margin-top: 12px;
+  justify-content: center;
+  a {
+    margin: 2px 8px;
+    color: $text-color;
+    font-size: 22px;
+    &:hover {
+      color: $fruit-red;
+      text-decoration: none;
+    }
+  }
+}
+.articles {
+  a {
+    color: $brand-color-dark;
+    text-decoration: none;
+    &:hover {
+      color: $fruit-red;
+      text-decoration: underline;
+    }
+  }
+}
+.songs {
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+ blockquote {
+  color: $brand-color;
+  border-left: 4px solid $border-color-01;
+  padding-left: $spacing-unit / 2;
+  @include relative-font-size(1.125);
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  i, em {
+    font-style: normal;
+  }
+}
+
+
+
+/**
+ * Code formatting
+ */
+ pre,
+ code {
+  font-family: $code-font-family;
+  font-size: 0.9375em;
+  border: 1px solid $border-color-01;
+  border-radius: 3px;
+  background-color: $code-background-color;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  background: $code-background-color;
+  @extend %vertical-rhythm;
+
+  .highlighter-rouge & {
+    background: $code-background-color;
+  }
+}
+
+
+
+/**
+ * Wrapper
+ */
+ .wrapper {
+  padding-right: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+  @extend %clearfix;
+
+  @media screen and (min-width: $on-large) {
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+}
+
+
+
+/**
+ * Clearfix
+ */
+ %clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+
+ .orange {
+  color: #f66a0a;
+}
+
+.grey {
+  color: #828282;
+}
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+  padding: 5px 3px 2px 5px;
+  vertical-align: text-bottom;
+}
+
+
+/**
+ * Tables
+ */
+ table {
+  width: 100%;
+  text-align: $table-text-align;
+  color: $table-text-color;
+  border-collapse: collapse;
+  font-size: 14px;
+  th.date {
+    width: 64px;
+  }
+  td:nth-child(1) {
+    text-align: right;
+    padding-right: 10px;
+  }
+  td:nth-child(2) {
+    color: $dark-grey;
+  }
+
+  @include media-query($on-laptop) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}

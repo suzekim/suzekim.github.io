@@ -1,0 +1,21 @@
+<h2>📝 Memos</h2>
+
+
+<table>
+	<thead>
+		<tr>
+			<th class="date"></th>
+			<th class="note"></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for post in site.posts %}
+
+		{%- assign date_format = site.minima.date_format | default: "%b %-d" -%}
+
+		<tr>
+			<td>{{ post.date | date: date_format}}</td><td>{{ post.title }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

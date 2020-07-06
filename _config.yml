@@ -20,19 +20,35 @@
 
 title: SKIM
 email: susie@susiekim.info
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://suzekim.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-linkedin_username: susiekim97
-github_username:  suzekim
+author:
+  name: Susie Kim 
+
+social_links:
+  linkedin: susiekim97
+  instagram: suzekim
+  spotify: suzekim
+  github:  suzekim
+
+collections_dir: content
+collections: 
+  home: 
+    output: true
+  posts:
+    output: true
+
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
