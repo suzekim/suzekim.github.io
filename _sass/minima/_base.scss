@@ -34,7 +34,10 @@ html {
   overflow-wrap: break-word;
 
   @include media-query($phone) {
-    font-weight: $base-font-weight;
+    font-weight: 400;
+  }
+  @include media-query($desktop) {
+    font-weight: 250;
   }
 }
 
