@@ -32,13 +32,6 @@ html {
   min-height: 100vh;
   flex-direction: column;
   overflow-wrap: break-word;
-
-  @include media-query($phone) {
-    font-weight: 600;
-  }
-  @include media-query($desktop) {
-    font-weight: 250;
-  }
 }
 
 p {

@@ -272,13 +272,6 @@
     @media screen and (min-width: $on-large) {
       @include relative-font-size(1.625);
     }
-
-    @include media-query($phone) {
-      font-weight: 400;
-    }
-    @include media-query($desktop) {
-      font-weight: 400;
-    }
   }
 
   h4 {
