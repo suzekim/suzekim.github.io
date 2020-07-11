@@ -393,7 +393,7 @@ span {
     margin-left: 2px;
     margin-right: 2px;
     font-size: 22px;
-    color: $fruit-red;
+    color: $fruit-red-med;
   }
 }
 
@@ -413,12 +413,12 @@ u {
   position: relative;
   padding-bottom: 0px;
   margin-bottom: 0.8px;
-  background: linear-gradient(to right, $fruit-red-med, $fruit-red-med);
-  background-size: 0% 2px;
+  background: linear-gradient(to right, $fruit-red-highlight, $fruit-red-highlight);
+  background-size: 0% 24px;
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: middle middle;
   &.first {
-    animation: underline 1.5s ease-in-out 1s;
+    animation: underline 1.5s 1s;
     animation-fill-mode: forwards;
   } 
   &.second {
@@ -440,7 +440,7 @@ u {
 }
 @keyframes underline {
   to {
-    background-size: 100% 2px;
+    background-size: 100% 24px;
   }
   100% {
     opacity: 1;
